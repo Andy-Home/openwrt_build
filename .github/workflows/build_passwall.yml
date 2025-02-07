@@ -151,8 +151,8 @@ jobs:
       if: steps.makefirmware.outputs.status == 'success'
       run: |
         cd openwrt/feeds/luci/applications
-        cp ../../../../.config ./build.config
-        cp ../../../../feeds.conf.default ./feeds.conf.default
+        cp ../../../.config ./build.config
+        cp ../../../feeds.conf.default ./feeds.conf.default
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >>$GITHUB_OUTPUT
         
