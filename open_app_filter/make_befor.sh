@@ -11,7 +11,7 @@ cp /usr/bin/upx-ucl /workdir/openwrt/staging_dir/host/bin/
 ls
 
 #添加 (Open App Filter)
-git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+git clone --branch v5.0.2 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 echo "CONFIG_PACKAGE_luci-app-oaf=y" >>.config
 
 #添加Docker

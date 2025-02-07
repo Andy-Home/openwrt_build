@@ -10,17 +10,11 @@ on:
       repo_branch:
         type: choice
         description: '版本分支'
-        default: 'openwrt-23.05'
+        default: 'v23.05.5'
         options:
-          - "lede-17.01"
-          - "main"
-          - "master"
-          - "openwrt-18.06"
-          - "openwrt-19.07"
-          - "openwrt-21.02"
-          - "openwrt-22.03"
-          - "openwrt-23.05"
-          - "openwrt-24.10"
+          - "v22.03.7"
+          - "v24.10.0"
+          - "v23.05.5"
       feeds_file:
         type: choice
         description: '替换软件源配置(feeds.conf.default)'
@@ -87,7 +81,7 @@ jobs:
     - name: 拉取OpenWRT仓库
       working-directory: /workdir
       run: |
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git clone --branch $REPO_BRANCH $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     
     - name: 检查文件状态
