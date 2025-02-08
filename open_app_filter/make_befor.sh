@@ -12,7 +12,6 @@ ls
 
 #添加 (Open App Filter)
 git clone --branch v5.0.2 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-echo "CONFIG_PACKAGE_luci-app-oaf=y" >>.config
 
 #添加Docker
 # git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
