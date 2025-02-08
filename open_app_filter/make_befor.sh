@@ -11,7 +11,7 @@ cp /usr/bin/upx-ucl /workdir/openwrt/staging_dir/host/bin/
 ls
 
 #添加 (Open App Filter)
-git clone --branch v5.0.2 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 #添加Docker
 # git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
