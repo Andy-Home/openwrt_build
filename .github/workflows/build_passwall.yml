@@ -101,6 +101,8 @@ jobs:
     - name: 更新并安装软件源
       run: |
         cd openwrt 
+        ./scripts/feeds install -a -f -p passwall_packages
+        ./scripts/feeds install luci-app-passwall
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds update -a && ./scripts/feeds install -a
@@ -133,7 +135,7 @@ jobs:
         echo -e "$(nproc) thread cpu"
         echo "Start Time: "$(date +"%Y/%m/%d %H:%M:%S")""
         make toolchain/install
-        make package/luci-app-passwall/compile V=s
+        make package/luci-app-passwall/compile V=99
         echo "End Time: "$(date +"%Y/%m/%d %H:%M:%S")""
         echo  "status=success" >>$GITHUB_OUTPUT
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME

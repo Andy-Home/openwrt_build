@@ -106,7 +106,6 @@ jobs:
       id: makedownload
       run: |
         cd openwrt
-        echo "CONFIG_PACKAGE_luci-app-oaf=y" >>.config
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
@@ -118,7 +117,9 @@ jobs:
         cd openwrt
         echo -e "$(nproc) thread cpu"
         echo "Start Time: "$(date +"%Y/%m/%d %H:%M:%S")""
-        make toolchain/install
+        make -j$(nproc) V=99 || make -j1 || make -j1 V=99
+        echo "CONFIG_PACKAGE_luci-app-oaf=y" >>.config  
+        make defconfig  
         make package/luci-app-oaf/compile V=s
         echo "End Time: "$(date +"%Y/%m/%d %H:%M:%S")""
         echo  "status=success" >>$GITHUB_OUTPUT
