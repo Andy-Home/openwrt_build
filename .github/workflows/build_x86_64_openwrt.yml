@@ -11,8 +11,8 @@ env:
   CONFIG_FILE: x86_64/.config
   DIY_SCRIPT: x86_64/diy-script.sh
   CACHE_TOOLCHAIN: true
-  UPLOAD_BIN_DIR: false
-  FIRMWARE_RELEASE: true
+  UPLOAD_BIN_DIR: true
+  FIRMWARE_RELEASE: false
   FIRMWARE_TAG: X86_64
   TZ: Asia/Shanghai
 
