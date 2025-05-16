@@ -20,7 +20,7 @@ cd ../
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 #添加 (Open App Filter)
-git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+#git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 #添加Docker
 # git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
