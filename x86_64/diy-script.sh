@@ -18,9 +18,9 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/l
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 #添加 (Open App Filter)
-git clone --depth=1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+# git clone --depth=1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 
 #添加Docker
 # git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
@@ -30,5 +30,5 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-a
 ./scripts/feeds install -a
 
 #修正Passwall Go版本问题
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+# rm -rf feeds/packages/lang/golang
+# git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang

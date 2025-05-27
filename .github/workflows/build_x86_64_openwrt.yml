@@ -11,7 +11,7 @@ env:
   CONFIG_FILE: x86_64/.config
   DIY_SCRIPT: x86_64/diy-script.sh
   CACHE_TOOLCHAIN: true
-  UPLOAD_BIN_DIR: true
+  UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: false
   FIRMWARE_TAG: X86_64
   TZ: Asia/Shanghai
@@ -154,7 +154,7 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE != 'true'
       uses: actions/upload-artifact@main
       with:
-        name: ${{ env.SOURCE_REPO }}-firmware-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-${{ env.FILE_DATE }}
+        name: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-firmware-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE_PATH }}
 
     - name: Upload Firmware To Release
